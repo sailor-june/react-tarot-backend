@@ -113,7 +113,7 @@ app.post("/diary", async (req, res) => {
   }
 });
 
-// PEOPLE DELETE ROUTE
+// Diary DELETE ROUTE
 app.delete("/diary/:id", async (req, res) => {
   try {
     // send all entries
@@ -124,12 +124,12 @@ app.delete("/diary/:id", async (req, res) => {
   }
 });
 
-// PEOPLE UPDATE ROUTE
+// Diary UPDATE ROUTE
 app.put("/diary/:id", async (req, res) => {
   try {
     // send all Entries
     res.json(
-      await People.findByIdAndUpdate(req.params.id, req.body, {
+      await Diary.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
       })
     );
